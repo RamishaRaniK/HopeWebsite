@@ -72,17 +72,12 @@ def addLeadToGoogleSheet(dictionary):
   import gspread
   from oauth2client.service_account import ServiceAccountCredentials
 
-   # Get the credentials JSON string from the environment variable
-  credentials_json = os.getenv('GOOGLE_CREDENTIALS')
-
-    # Parse the JSON string into a dictionary
-  creds_dict = json.loads(credentials_json)
-
   # Define the scope
   scope = ['https://www.googleapis.com/auth/spreadsheets']
 
   # Add credentials to the account
-  creds = ServiceAccountCredentials.from_json_keyfile_name(creds_dict, scope)
+  creds = ServiceAccountCredentials.from_json_keyfile_name(
+      'websiteleadchatgptapi-a46f50ae1507.json', scope)
 
   # Authorize the client
   client = gspread.authorize(creds)
