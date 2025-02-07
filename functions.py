@@ -119,10 +119,11 @@ def addTranscripitToGoogleSheet(dictionary):
 
   # Define the scope
   scope = ['https://www.googleapis.com/auth/spreadsheets']
+  secret_file_path = '/etc/secrets/websiteleadchatgptapi-a46f50ae1507.json'
 
   # Add credentials to the account
   creds = ServiceAccountCredentials.from_json_keyfile_name(
-      'websiteleadchatgptapi-6de1d5cf867c.json', scope)
+      secret_file_path, scope)
 
   # Authorize the client
   client = gspread.authorize(creds)
