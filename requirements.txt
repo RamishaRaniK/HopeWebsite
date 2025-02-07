@@ -3,3 +3,4 @@ openai==1.61.1
 packaging==23.1
 gunicorn
 gspread
+oauth2client
